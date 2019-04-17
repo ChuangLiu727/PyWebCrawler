@@ -1,3 +1,4 @@
+# coding=UTF-8
 #https://explorer.nebulas.io/main/api/account?p=49
 #https://explorer.nebulas.io/main/api/address/n1ooMb6A5gS9UJFr5rot1JgifzWxToESaSF
 #合约账户的type为1

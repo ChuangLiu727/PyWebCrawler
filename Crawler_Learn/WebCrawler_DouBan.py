@@ -1,31 +1,15 @@
-#%% Change working directory from the workspace root to the ipynb file location. Turn this addition off with the DataScience.changeDirOnImportExport setting
-import os
-try:
-	os.chdir(os.path.join(os.getcwd(), '爬虫学习'))
-	print(os.getcwd())
-except:
-	pass
-#%% [markdown]
-# # 豆瓣top
-
-#%%
+# coding=UTF-8
 #https://movie.douban.com/top250
 #每页有25条电影，共有10页。
 #电影列表在页面上的位置为一个class属性为grid_view的ol标签中。
 #每条电影信息放在这个ol标签的一个li标签里。
 
-
-#%%
 import requests
 from bs4 import BeautifulSoup
 import codecs
 
-
-#%%
 DOWNLOAD_URL = 'http://movie.douban.com/top250'
 
-
-#%%
 def download_page(url):
     #手动指定User-Agent为Chrome浏览器，再此访问就得到了真实的网页源码。服务器通过校验请求的U-A来识别爬虫
     headers = {
@@ -35,7 +19,6 @@ def download_page(url):
     return data
 
 
-#%%
 def parse_html(html):
     #创建了一个BeautifulSoup对象
     soup = BeautifulSoup(html)
@@ -54,7 +37,6 @@ def parse_html(html):
     return movie_name_list, None
 
 
-#%%
 def main():
     url = DOWNLOAD_URL
 
@@ -64,13 +46,5 @@ def main():
             movies, url = parse_html(html)
             fp.write(u'{movies}\n'.format(movies='\n'.join(movies)))
 
-
-#%%
 if __name__ == '__main__':
     main()
-
-
-#%%
-
-
-
