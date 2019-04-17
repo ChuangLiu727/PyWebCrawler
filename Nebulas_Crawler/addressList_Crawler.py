@@ -15,6 +15,8 @@ import random
 
 DOWNLOAD_URL = 'https://explorer.nebulas.io/main/api/account?p='
 
+#DOWNLOAD_URL = 'https://explorer.nebulas.io/#/accounts?p=2'
+
 def get_contract_address_witherror(num):
     url = DOWNLOAD_URL+str(num)
     print("requests from : " + url)
@@ -43,9 +45,6 @@ def get_contract_address_witherror(num):
         return num
     except ConnectionError: # 网络中断连接错误
         print('Connect error')
-        return num
-    except SysCallError: 
-        print('SysCallError')
         return num
 
 num = 40

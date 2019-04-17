@@ -40,9 +40,6 @@ def get_contract_witherror(address):
     except ConnectionError: # 网络中断连接错误
         print('Connect error')
         return False
-    except SysCallError: 
-        print('SysCallError')
-        return False
 
 # 获取address list
 data = pd.read_table('address_list.txt',header=None,encoding='gb2312',delim_whitespace=True,index_col=0)
