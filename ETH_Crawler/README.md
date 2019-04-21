@@ -1,5 +1,10 @@
 # ETH_Crawler
 
+## Requirements
+
+lxml
+requests
+
 ## Uages
 
 https://github.com/Northeastern-University-Blockchain/EthCodeSpider
